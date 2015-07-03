@@ -1,0 +1,12 @@
+# Site settings
+title: "CS 5220: Applications of Parallel Computers"
+email: bindel@cs.cornell.edu
+description: > 
+  Cornell CS 5220 is a class on high-performance scientific computing.
+baseurl: ""
+url: "http://cornell-cs5220-f15.github.io"
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown

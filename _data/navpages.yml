@@ -1,0 +1,12 @@
+- link: index
+  name: Home
+- link: posts
+  name: Posts
+- link: syllabus
+  name: Syllabus
+- link: schedule
+  name: Schedule
+- link: assignments
+  name: Assignments
+- link: readings
+  name: Readings

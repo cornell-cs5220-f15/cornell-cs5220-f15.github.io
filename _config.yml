@@ -1,7 +1,7 @@
 title: David Bindel
 email: bindel@cornell.edu
 description: Course Page for CS 5220
-baseurl: "/"
+baseurl: ""
 url: "http://cornell-cs5220-f15.github.io/"
 
 encoding: utf-8

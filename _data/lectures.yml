@@ -3,62 +3,72 @@
 #
 -
   date: 2015-08-25
-  info: |
-    [Getting-to-know you quiz](lec/2015-01-21-quiz.html),
-    [course logistics](syllabus.html), and
-    [intro to nonlinear equations in 1D](lec/2015-01-21-notes.pdf)  
+  info: Intro to CS 5220 and class logistics
   hw:
-    - <a href="hw/ps1.pdf">PS1</a> out
+    - Assignment 0 out
 -
   date: 2015-08-27
+  info: Basic concepts in performance modeling
 #
 # ==================
 # Week 2
 #
 -
   date: 2015-09-01
+  info: Computer architecture basics
 -
   date: 2015-09-03
+  info: Computer architecture basics
 #
 # ==================
 # Week 3
 #
 -
   date: 2015-09-08
+  info: Intro to parallel machines and models
 -
   date: 2015-09-10
+  info: Intro to parallel machines and models
 #
 # ==================
 # Week 3
 #
 -
   date: 2015-09-15
+  info: Parallelism and locality in simulations
 -
   date: 2015-09-17
+  info: Parallelism and locality in simulations
 #
 # ==================
 # Week 4
 #
 -
   date: 2015-09-22
+  info: Distributed memory and MPI
 -
   date: 2015-09-24
+  info: Distributed memory and MPI
 #
 # ==================
 # Week 5
 #
 -
   date: 2015-09-29
+  info: Shared memory programming
 -
   date: 2015-10-01
+  info: Shared memory programming
 #
 # ==================
 # Week 6
 #
 -
   date: 2015-10-06
+  info: Tools for profiling and correctness
 -
   date: 2015-10-08
+  info: Tools for profiling and correctness
 #
 # ==================
 # Week 7
@@ -68,14 +78,17 @@
   break: Fall break
 -
   date: 2015-10-15
+  info: High-level languages and HPC
 #
 # ==================
 # Week 8
 #
 -
   date: 2015-10-20
+  info: Dense linear algebra I
 -
   date: 2015-10-22
+  info: Dense linear algebra II
 #
 # ==================
 # Week 9
@@ -92,30 +105,37 @@
 #
 -
   date: 2015-11-03
+  info: Sparse linear algebra I
 -
   date: 2015-11-05
+  info: Sparse linear algebra II
 #
 # ==================
 # Week 11
 #
 -
   date: 2015-11-10
+  info: Impact of floating point
 -
   date: 2015-11-12
+  info: Load balancing
 #
 # ==================
 # Week 12
 #
 -
   date: 2015-11-17
+  info: Graph partitioning
 -
   date: 2015-11-19
+  info: GPGPU, CUDA, OpenCL, and OpenACC
 #
 # ==================
 # Week 13
 #
 -
   date: 2015-11-24
+  info: Selected project presentations
 -
   date: 2015-11-26
   break: Thanksgiving

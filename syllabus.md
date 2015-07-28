@@ -30,48 +30,56 @@ compilers, and parallel libraries and toolboxes.
 
 ### Prerequisites
 
-Some programming skills in a C-family language (C/C++/Java).
-Prior exposure to numerical methods.
+This class is intended for a broad array of students working with high
+performance computation, including students who might not have had a
+CS undergraduate degree.  If you are concerned about whether you have
+the right background, please talk to the instructors.  Generally,
+the prerequisites are:
+
+- You will need programming skills in a C family language (C, C#, C++,
+  Java).  Code for the class will be written mostly in C (or C++).
+- Prior exposure to a Unix environment is helpful but not critical.
+- Prior exposure to numerical methods is helpful but not critical.
 
 ### Texts
 
-None required.
+None required, but relevant texts include:
+
+- [Introduction to High Performance Computing for Scientists and Engineers (Hager and Wellein)][hager-book]
+- [Structured Parallel Programming (McCool, Reinders, Robison)][mccool-book]
+- [Programming Massively Parallel Processors (Kirk and Hwu)][kirk-book]
+- [Performance Optimization of Numerically Intensive Codes (Goedecker)][goedecker-book]
+- [Principles of Parallel Programming (Lin and Snyder)][lin-book]
+- [Introduction to Parallel Programming (Pacheco)][pacheco-book]
+- [Parallel Programming (Wilkinson and Allen)][wilkinson-book]
+
+[hager-book]: http://www.amazon.com/Introduction-Performance-Computing-Scientists-Computational/dp/143981192X
+[mccool-book]: http://www.amazon.com/Structured-Parallel-Programming-Efficient-Computation/dp/0124159931
+[kirk-book]: http://www.amazon.com/Programming-Massively-Parallel-Processors-Second/dp/0124159923/
+[goedecker-book]: http://epubs.siam.org/doi/book/10.1137/1.9780898718218
+[lin-book]: http://www.amazon.com/Principles-Parallel-Programming-Calvin-Lin/dp/0321487907
+[pacheco-book]: http://www.amazon.com/Introduction-Parallel-Programming-Peter-Pacheco/dp/0123742609
+[wilkinson-book]: http://www.amazon.com/Parallel-Programming-Techniques-Applications-Workstations/dp/0131405632
 
 ### Course technologies
 
-GitHub
-Etherpad
+- We will be collaborating on code and modeling exercises in class,
+  and you are *encouraged* to bring a laptop to fully participate.
+- You will need a free [GitHub account](https://github.com/).
+  The [Student Developer Pack](https://education.github.com/pack)
+  option comes with various perks (including a micro account with three
+  free repositories).
 
-## Course work
+### Computing platform
 
-Core principles:
-- We're all learning different things; be mindful of prereqs, but
-  don't panic.
-- It's all public -- be inspired, but cite
-  - I can track the flow of ideas easily enough (so can anyone)
-- Class is for active learning rather than lecture
-  - Bring a laptop!  You'll want it.
-- You'll evaluate yourselves and each other; I'm here as a guide
+The primary computing platform will be an instructional cluster with
+fifteen Xeon Phi 5110P boards hosted in eight 12-core nodes consisting
+of Intel Xeon E5-2620 v3.  Unless otherwise stated, homework and
+projects should be tested and timed on these machines.
 
-"Unless there's some special reason, I want all the repositories to be
-public -- the kids have plenty of ways of sharing information without
-us knowing about it so I'd rather try to create a culture of sharing
-with attribution."
-https://github.com/education/teachers/issues/2#issuecomment-46861804
-
-Cite.
-
-We will not look at every line of code, or even most of them.
-
-Repo per project vs repo per course
-
-### Reading
-
-### Homework
-
-Assignment 0: Pull request against the "who are you?" survey.
-
-### Projects
+Intel generously donated the Xeon Phi boards and funded the purchase
+of the host machines, which were provided with deep matching discounts
+by Dell.
 
 ### Class material
 
@@ -80,25 +88,92 @@ Class material will be posted on GitHub, and any merged pull requests
 tests that uncover interesting problems, suggested exercises, etc)
 will be given extra credit.
 
-## Grading
+Student work will also be posted on GitHub in public repositories,
+with homework and projects submitted via pull requests (don't worry,
+we will discuss how these work in class).
 
-Point is not to grade you, it is for you to learn.
+## Course work
 
-https://www.insidehighered.com/news/2015/02/19/u-illinois-urbana-champaign-backs-down-legal-threat-against-code-repository
+### In-class work
+
+CS 5220 will be run as a flipped classroom.  You are responsible for
+reviewing assigned materials outside class; class time will be devoted
+to discussion of papers, pair programming, performance modeling
+exercises, and other active learning work.  While it is okay to miss
+class sometimes, you are expected to participate regularly as part
+of your grade.
+
+### Reading
+
+Readings will be assigned before class, and may include papers, notes,
+slide decks.  There may also be occassional videos or interactive
+tutorials (even though these technically may involve little reading).
+We will assign a variety of pre-class responses to readings; these
+should be submitted prior to class, but may (and should) be updated
+after class in response to what was learned.
+
+### Homework and Projects
+
+There will be a few small individual programming and performance
+modeling exercises to be done out of class (often with an in-class
+performance).  There will be three (probably) standardized projects on
+performance analysis and tuning of example numerical codes, including
+both coding work and a written report.  Project groups will be
+assigned, and students will be responsible for assessing the
+contributions made by each team member.  The final projects are also
+in small groups, and may either involve a research project (default)
+or an instructional module (experimental):
+
+ - Research projects should examine performance analysis in some form,
+   but are otherwise flexible.  Examples might include exploring
+   novel programming languages or models, enhancing or tuning a
+   high-performance numerical code, or modeling performance tradeoffs
+   in some existing code base.  The deliverables for research
+   projects will be a paper and a short presentation.
+ - Instructional modules should teach some aspect of high performance
+   computing or related technologies, targeted at K-12,
+   undergraduate, or graduate students.  Examples might include a
+   short course, a workshop, or a project for a course like CS 5220.
+   We particularly encourage modules that use the Xeon Phi in
+   some interesting way.  The deliverables for instructional projects
+   include not only the materials used (lesson plans, slide decks,
+   sample codes) but also a set of learning objectives, an assessment
+   plan, and a concrete plan for how the module might be deployed
+   (though actual deployment is not required).
+
+### Peer review
+
+Class projects will be developed in public repositories on GitHub.
+Students are encouraged to study code written by other groups for
+inspiration (with citation), and to help provide other groups with
+constructive feedback.  Project groups will also be responsible for
+reviewing the code and write-up of other groups under a rubric that
+will be provided.
+
+### Grading
+
+- Class participation and individual homework (20%)
+- Standard group projects and peer review (50%)
+- Final project (30%)
 
 ## Course policies
 
 ### Late work policy
 
-Homework is due by 11:59 on the due date.  Resubmissions up to the
-deadline are safe, but late submissions are not accepted.  The
-lowest homework grade will be dropped in computing your final score.
+Pre-class homework is due at the start of class in order to ensure
+high-quality in-class exercises.  Homework may be revised during or
+after class based on what is learned during the class.  Grades for
+homework exercises will be based on a check/no check assessment of the
+initial submission and (potentially) a more thorough evaluation of a
+revised submission, which will typically be due before the next class.
 
-Projects are due at 11:59 on the initial due date.  Projects that are
-not submitted on time for peer review may still be submitted for the
-final deadline; however, they will receive a 10% grade penalty and
-will not receive the benefit of a review.  Peer reviews and
-the final (post-review) version must be submitted on time.
+Group projects are due by 11:59 on the due date in order to allow a
+proper opportunity for peer review.  As with homework, group projects
+will be evaluated both before and after peer review, with a more
+thorough assessment after the review.  Group projects that are
+submitted late will forfeit both the part of the grade associated with
+the initial submission and will not receive the benefit of peer
+review.
 
 ### Collaboration
 
@@ -106,22 +181,23 @@ An assignment is an academic document, like a journal article.
 When you turn it in, you are claiming everything in it is your
 original work, *unless you cite a source for it*.
 
-You are welcome to discuss homework and projects among yourselves in
-general terms.  However, you should not look at code or writeups from
-other students, or allow other students to see your code or writeup,
-even if the general solution was worked out together.  Unless we
-explicitly allow it on an assignment, we will not credit code or
-writeups that are shared between students (or teams, in the case of
-projects).
+As part of the process of learning development skills, you should
+attempt to develop and debug code for yourself.  Unlike most CS
+courses, we will keep all code in public repositories, and you are
+*encouraged* to look at code and writeups from other students for
+inspiration, as well as any resources you find on the web, provided
+you cite the work that inspired you.  However, we *do not encourage*
+blatant bulk copying, even with citation.  Such behavior will be
+visible not only to instructors but also to peers, and peer evaluators
+will be asked to identify such behavior.
 
-If you get an idea from a classmate, the TA, a book or other published
-source, or elsewhere, please provide an appropriate citation.  This is
-not only critical to maintaining academic integrity, but it is also an
-important way for you to give credit to those who have helped you out.
-When in doubt, cite!  Code or writeups with appropriate citations will
-never be considered a violation of academic integrity in this class
-(though you will not receive credit for code or writeups that were
-shared when you should have done them yourself).
+### Reproducibility
+
+Computations and performance experiments that appear in homeworks and
+project reports should be *automatically reproducible* on the class
+cluster, either by the instructors or by peers.  We will penalize
+experimental results that do not come with an associated script that
+can reproduce them, even if they appear to be otherwise correct.
 
 ### Academic Integrity
 

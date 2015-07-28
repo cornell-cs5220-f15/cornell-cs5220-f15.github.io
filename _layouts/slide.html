@@ -11,7 +11,11 @@
       {% endif %}
     </title>
 
+    {% if page.author %}
+    <meta name="author" content="{{ page.author }}" />
+    {% else %}
     <meta name="author" content="{{ site.author }}" />
+    {% endif %}
 
     <!--
       Original source:

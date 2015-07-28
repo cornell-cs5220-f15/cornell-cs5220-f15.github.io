@@ -1,14 +1,18 @@
 * Tasks
 ** Add info re cluster setup
-** Add Intel gift acknowledgement to home page
 ** Add background readings -- SWC stuff
-** Add recommended readings -- HPC part of bookshelf
-** Describe plans re open work
-** Initial posts
 ** Look into quiz framework for reveal.js slide decks?
 
    https://code.google.com/p/inline-quiz-js/wiki/Examples
 ** Comparisons: Etherpad vs Box Notes?
+** DONE Add Intel gift acknowledgement to home page
+   CLOSED: [2015-07-27 Mon 21:33]
+** DONE Add recommended readings -- HPC part of bookshelf
+   CLOSED: [2015-07-27 Mon 21:33]
+** DONE Describe plans re open work
+   CLOSED: [2015-07-27 Mon 21:33]
+** DONE Initial posts
+   CLOSED: [2015-07-27 Mon 21:33]
 * Scribblings
 
 Core principles:

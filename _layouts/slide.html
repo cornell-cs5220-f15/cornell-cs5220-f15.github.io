@@ -40,6 +40,9 @@
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="{{ "reveal.js/lib/css/zenburn.css" | prepend: site.baseurl }}"/>
 
+   <!-- Special radio buttons -->
+   <link rel="stylesheet" href="{{ "css/slideradio.css" | prepend: site.baseurl }}">
+
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
@@ -74,12 +77,19 @@
       Reveal.initialize({
         controls: true,
         progress: true,
-        history: true,
+        {% if page.history %}
+          history: {{page.history}},
+        {% else %}
+          history: true,
+        {% endif %}
         center: true,
         {%if page.transition %}
           transition: '{{page.transition}}',
         {% else %}
           transition: 'slide', // none/fade/slide/convex/concave/zoom
+        {% endif %}
+        {% if page.autoslide %}
+          autoSlide: {{page.autoslide}},
         {% endif %}
         // Optional reveal.js plugins
         dependencies: [
@@ -94,6 +104,10 @@
         ]
       });
     </script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+
+    {% if page.js %}{% for script in page.js %}
+    <script src="{{ site.baseurl }}{{ script }}"></script>
+    {% endfor %}{% endif %}
   </body>
 </html>

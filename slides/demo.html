@@ -4,6 +4,7 @@ title: A test presentation
 description: My little presentation slides
 theme: black
 transition: slide
+js: js/quiz.js
 ---
 
 <section data-markdown
@@ -28,4 +29,27 @@ And we have math
 $$
   P = \frac{1}{2\pi i} \int_{\Gamma} (zI-A)^{-1} \, dz
 $$
+</section>
+
+<section>
+  <h2>And now for a quiz!</h2>
+  <div class="quiz">
+    {"question": "What is the best?", "tag": "q1",
+    "choices": [
+    {"answer": "Good", "response": "Cold"},
+    {"answer": "Better", "response": "Warmer"},
+    {"answer": "Best", "response":
+    "Huzzah!  I will now go on for some while about how smart you are"}]}
+  </div>
+</section>
+
+<section>
+  <h2>And auto-quiz!</h2>
+  <div class="quiz">
+    {"question": "What is your favorite color?", "tag": "q2",
+    "choices": [
+    {"answer": "Green", "response": "Very nice"},
+    {"answer": "Yellow", "response": "Um, no."},
+    {"answer": "Blue", "response": "Yeah, usually"}]}
+  </div>
 </section>

@@ -68,7 +68,7 @@
   info: Tools for profiling and correctness
 -
   date: 2015-10-08
-  info: Tools for profiling and correctness
+  info: Impact of floating point
 #
 # ==================
 # Week 7
@@ -115,7 +115,7 @@
 #
 -
   date: 2015-11-10
-  info: Impact of floating point
+  info: Parallel frameworks
 -
   date: 2015-11-12
   info: Load balancing

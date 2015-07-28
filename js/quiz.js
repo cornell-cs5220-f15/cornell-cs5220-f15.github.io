@@ -1,9 +1,6 @@
 ---
 ---
 
-<!--
-  jQuery quiz framework for use with reveal.js
-  -->
 $(document).ready(function() {
 
     $(".quiz").each(function(i,obj) {
@@ -27,7 +24,7 @@ $(document).ready(function() {
             html += "</label>";
             html += "</li>";
         }
-        html += "</ul></div><br/>"
+        html += "</ul></div><br/>";
         html += "<p style=\"text-align: left; display: inline-block;\" id=\"" + data.tag + "Result\"></p>";
         console.log(html)
         $(this).replaceWith(html);

@@ -183,7 +183,7 @@ original work, *unless you cite a source for it*.
 
 As part of the process of learning development skills, you should
 attempt to develop and debug code for yourself.  Unlike most CS
-courses, we will keep all code in public repositories, and you are
+courses, we will by default keep all code in public repositories, and you are
 *encouraged* to look at code and writeups from other students for
 inspiration, as well as any resources you find on the web, provided
 you cite the work that inspired you.  However, we *do not encourage*
@@ -210,10 +210,28 @@ and we can help you figure out what to do.
 For more information, see Cornell's 
 [Code of Academic Integrity](http://cuinfo.cornell.edu/Academic/AIC.html).
 
-All work will be public on GitHub, and we encourage you to be inspired
-by work of others.  But cite, and be aware of your own learning experience!
+By default, all work will be public on GitHub, and we encourage you to
+be inspired by work of others.  But cite, and be aware of your own
+learning experience!
 
-### Emergency procedures
+### GitHub and Copyright
+
+Students retain copyright for their academic work.  While you will be
+asked to post code on GitHub, you are *not required* to post work
+under an open source license.
+
+### GitHub and Privacy
+
+You will be asked to post your code on GitHub in a public repository.
+Per FERPA, this is *not required*.  If you do choose to post code on
+GitHub, you are free to use a pseudonymous account.  We will use the
+CS department Course Management System (CS) to inform you of grades
+and evaluation of your work; this information will never be posted in
+public.  f you prefer not to post code on GitHub at all, please
+contact us in order to arrange an alternative for submission and peer
+review.  This will not affect your grade in any way.
+
+### Emergency Procedures
 
 In the event of a major campus emergency, course requirements, deadlines, and
 grading percentages are subject to changes that may be necessitated by a

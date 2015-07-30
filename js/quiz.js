@@ -12,8 +12,7 @@ $(document).ready(function() {
         qspec_lines = qspec_lines.map(function(s) { return s.trim(); });
         console.log(qspec_lines);
         var tag = "_q_" + i;
-        var html = "<div style=\"text-align: left; display: inline-block;\">";
-        html += "<p>" + qspec_lines[0] + "</p>";
+        var html = "<p>" + qspec_lines[0] + "</p>";
         html += "<ul style=\"list-style: none;\">";
         for (var i = 1; i < qspec_lines.length; i += 2) {
             var answer = qspec_lines[i];
@@ -28,8 +27,8 @@ $(document).ready(function() {
             html += "</label>";
             html += "</li>";
         }
-        html += "</ul></div><br/>";
-        html += "<p style=\"text-align: left; display: inline-block;\" id=\"" + tag + "Result\"></p>";
+        html += "</ul>";
+        html += "<p id=\"" + tag + "Result\"></p>";
         console.log(html);
         $(this).replaceWith(html);
     });

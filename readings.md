@@ -68,6 +68,24 @@ CS 267), [available here][cs267] in online form.
 [am583]: http://faculty.washington.edu/rjl/classes/am583s2014/
 [am583-mooc]: https://www.coursera.org/course/scicomp
 
+## Related resources from Intel
+
+Intel has supported our course through a generous hardware donation.
+Part of the point is to develop new curricular content on parallel
+programming.  They also have lots of existing curricular content and
+tutorials and references on Intel parallel technology, and these
+are worth a browse.
+
+- [Intel code modernization site][modern-code]
+- [Video lectures on parallel computing][intel-university]
+- [Parallel programming curriculum initiative][pp-initiative]
+- [Parallel programming curriculum content][pp-curricula]
+
+[modern-code]: https://software.intel.com/en-us/modern-code
+[pp-initiative]: https://www-ssl.intel.com/content/www/us/en/education/university/parallel-programming-initiative.html
+[pp-curricula]: http://www.intel.com/content/www/us/en/education/university/parallel-programming-initiative/curricula.html
+[intel-university]: http://university.intel.com/
+
 ## Recommended software skills background
 
 Though I expect students taking the class to have some programming

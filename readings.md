@@ -113,6 +113,8 @@ and Make may also be useful (though less immediately critical).
   tutorial.
 - Atlassian (makers of [BitBucket][bitbucket]) have a good
   [set of Git tutorials as well][bitbucket-turorials].
+- [ProGit][progit] is a freely available online book that
+  covers the basics and much more.
 
 As an aside: [BitBucket][bitbucket] is probably the primary competitor to Git.
 I recommend getting accounts on both GitHub and BitBucket;
@@ -126,6 +128,7 @@ other projects that you might want to keep initially private.
 [try-git]: http://try.github.com/
 [bitbucket]: http://bitbucket.org/
 [bitbucket-tutorial]: https://www.atlassian.com/git/tutorials
+[progit]: http://git-scm.com/doc
 
 ## C background
 

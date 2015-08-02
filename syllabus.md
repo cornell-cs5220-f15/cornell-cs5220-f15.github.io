@@ -225,11 +225,15 @@ under an open source license.
 You will be asked to post your code on GitHub in a public repository.
 Per FERPA, this is *not required*.  If you do choose to post code on
 GitHub, you are free to use a pseudonymous account.  We will use the
-CS department Course Management System (CS) to inform you of grades
+CS department Course Management System (CMS) to inform you of grades
 and evaluation of your work; this information will never be posted in
-public.  f you prefer not to post code on GitHub at all, please
-contact us in order to arrange an alternative for submission and peer
-review.  This will not affect your grade in any way.
+public.
+
+If you prefer not to use GitHub, this will not affect your grade in
+any way.  You will still use git to submit your code, but with
+submissions created via `git format-patch` and uploaded to CMS.
+Your submissions will still be subject to peer review.  If you want
+to take this option, let us know promptly.
 
 ### Emergency Procedures
 

@@ -20,6 +20,7 @@ TR 8:45-9:99, 203 Phillips
 - Reason about code performance
   - Many factors: hardware, software, algorithms
   - Want simple, "good enough" models
+- Read/judge HPC literature
 - Apply model numerical HPC patterns
 - Tune existing codes for modern HW
 - Apply good software practices
@@ -44,7 +45,7 @@ Fine if you're not a numerical C hacker!
 ## Usual Logistics
 
 - Home: [cornell-cs5220-f15.github.io](http://cornell-cs5220-f15.github.io)
-- Read [the syllabus](http://cornell-cs5220-f15.github.io/syllabus.html)
+- Read [the syllabus](/syllabus.html) and [conduct code](/conduct.html)
 - Enroll if you'll take the class
 - Grading breakdown
   - Class participation + HW (20%)
@@ -146,14 +147,38 @@ You'll need two accounts:
   - Linux base + environment modules
   - Submission via batch queue
 
-This is a *new cluster* -- expect some issues and be patient!
+A *new cluster* -- expect issues, be patient!
 </section>
 
 <section data-markdown>
-## Logistics: GitHub
+## Git
+
+- Popular Distributed Version Control System (DVCS)
+- You'll learn to use it in this class
+- Why?
+  - A good standard tool
+  - Helps with teamwork
+  - Helps with multiple machines
+
+See also: ["Rationale for class Git workflows"](/git/2015/08/01/rationale.html)
+</section>
+
+<section data-markdown>
+## Git + GitHub
+
+- Fork/pull: *very* common software workflow
+- Start assignments by *forking* a class repository
+- Submit work via *pull requests* (PR)
+  - Start a conversation (get feedback!)
+  - Can keep working after PR
+
+Course correction/addition PRs for extra credit!
+</section>
+
+<section data-markdown>
+## GitHub
 
 - Default for distributing work *and* submitting
-  - *Very* common software workflow
   - Public code = bragging rights
   - You learn from your peers
 - Privacy concerns
@@ -161,13 +186,6 @@ This is a *new cluster* -- expect some issues and be patient!
   - Grades and such stay on [CMS](http://cms.csuglab.cornell.edu/)
   - May stay pseudonymous [(use private email)](https://help.github.com/articles/keeping-your-email-address-private/)
   - Can opt out without penalty -- come talk to me
-</section>
-
-<section data-markdown>
-## Logistics: GitHub
-
-- Submit work via *pull requests*
-  - Course corrections/additions for extra credit!
 </section>
 
 <section data-markdown>
@@ -226,18 +244,21 @@ This is a *new cluster* -- expect some issues and be patient!
 - Two parts to grade: initial and final submission
   - Get feedback on initial submission
   - Correct issues before final submission
+- PRs track your repository updates
 </section>
 
 <section data-markdown>
 ## Final projects
 
-- Deliverables
-  - Tuned (and correct) code
-  - Written report with reproducible experiments
-- Three or so during semester
-- Assigned small groups
-- Comes with milestones
-- Work is peer reviewed
-- Groups also self-assess
+- Peer-reviewed research or intructional projects
+  - Small groups (unassigned)
+  - Will solicit proposals in a month or so
+- Research projects
+  - Short research paper and presentation
+  - Topic must involve performance
+- Teaching projects
+  - Instructional module and presentation
+  - Includes learning goals, assessment, deployment plan
+
 </section>
 

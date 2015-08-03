@@ -1,4 +1,7 @@
-# Contributor Code of Conduct
+---
+title:      Contributor Code of Conduct
+layout:     main
+---
 
 As contributors and maintainers of this class, and in the interest
 of fostering an open and welcoming community, we pledge to respect all

@@ -150,6 +150,14 @@ constructive feedback.  Project groups will also be responsible for
 reviewing the code and write-up of other groups under a rubric that
 will be provided.
 
+### Reproducibility
+
+Computations and performance experiments that appear in homeworks and
+project reports should be *automatically reproducible* on the class
+cluster, either by the instructors or by peers.  We will penalize
+experimental results that do not come with an associated script that
+can reproduce them, even if they appear to be otherwise correct.
+
 ### Grading
 
 - Class participation and individual homework (20%)
@@ -191,42 +199,49 @@ blatant bulk copying, even with citation.  Such behavior will be
 visible not only to instructors but also to peers, and peer evaluators
 will be asked to identify such behavior.
 
-### Reproducibility
+### Academic integrity
 
-Computations and performance experiments that appear in homeworks and
-project reports should be *automatically reproducible* on the class
-cluster, either by the instructors or by peers.  We will penalize
-experimental results that do not come with an associated script that
-can reproduce them, even if they appear to be otherwise correct.
-
-### Academic Integrity
-
-We expect academic integrity from everyone.  School is stressful,
-and you may feel pressure from your coursework or other factors,
-but that is no reason for dishonesty!  If you feel you can't complete
-the work on the own, come talk to the professor, the TA, or your advisor,
-and we can help you figure out what to do.
+We expect academic integrity from everyone.  School is stressful, and
+you may feel pressure from your coursework or other factors, but that
+is no reason for dishonesty!  By default, all work will be public on
+GitHub, and we encourage you to be inspired by work of others.  But
+cite, and be aware of your own learning experience!  If you feel you
+can't complete the work on the own, come talk to the professor, the
+TA, or your advisor, and we can help you figure out what to do.
 
 For more information, see Cornell's 
 [Code of Academic Integrity](http://cuinfo.cornell.edu/Academic/AIC.html).
 
-By default, all work will be public on GitHub, and we encourage you to
-be inspired by work of others.  But cite, and be aware of your own
-learning experience!
+### Code of conduct
 
-### GitHub and Copyright
+We have a [code of conduct](conduct.html) for contributing to the
+class (adapted from
+[the Contributor Covenant 1.2.0](http://contributor-covenant.org/)).
+In addition to not harrassing each other, note that you *must not
+publish private information without permission*.  Particularly when
+working on public collaborations such as group projects and peer
+review, please know and respect the privacy concerns of your peers.
+In public forums such as GitHub pull discussions, it is probably best
+to refer to each other only by GitHub identifiers.
+
+### GitHub and copyright
 
 Students retain copyright for their academic work.  While you will be
 asked to post code on GitHub, you are *not required* to post work
 under an open source license.
 
-### GitHub and Privacy
+Any code or documentation you post for inclusion in the main class
+repository should be released under an appropriate open license; see
+the
+[contributing guidelines](ttps://github.com/cornell-cs5220-f15/cornell-cs5220-f15.github.io/blob/master/CONTRIBUTING.md).
 
-You will be asked to post your code on GitHub in a public repository.
-Per FERPA, this is *not required*.  If you do choose to post code on
-GitHub, you are free to use a pseudonymous account.  We will use the
-CS department Course Management System (CMS) to inform you of grades
-and evaluation of your work; this information will never be posted in
+### GitHub and privacy
+
+You will be asked to post your code on GitHub in a public repository,
+but this is *not required*.  If you do choose to post code on GitHub,
+you are free to use a pseudonymous account.  We will use the CS
+department Course Management System (CMS) to inform you of grades and
+evaluation of your work; this information will never be posted in
 public.
 
 If you prefer not to use GitHub, this will not affect your grade in
@@ -235,7 +250,7 @@ submissions created via `git format-patch` and uploaded to CMS.
 Your submissions will still be subject to peer review.  If you want
 to take this option, let us know promptly.
 
-### Emergency Procedures
+### Emergency procedures
 
 In the event of a major campus emergency, course requirements, deadlines, and
 grading percentages are subject to changes that may be necessitated by a

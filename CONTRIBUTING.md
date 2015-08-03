@@ -15,7 +15,7 @@ do include the appropriate license text.
 The class adheres to a [code of conduct][code].  By participating, you
 are expected to uphold this code.
 
-[code]: CONTRIBUTING.md
 [authors]: AUTHORS.txt
 [mit]: http://opensource.org/licenses/MIT
 [cc]: http://creativecommons.org/licenses/by-sa/4.0/
+[code]: http://cornell-cs5220-f15.github.io/contribute.html

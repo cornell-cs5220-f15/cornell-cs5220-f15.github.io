@@ -3,7 +3,7 @@ layout: post
 title:  Rationale for class Git workflows
 author: David Bindel
 date:   2015-08-01 23:46:36 -0400
-categories: git
+tags:   git
 ---
 
 We will use Git and GitHub extensively in CS 5220: for version control

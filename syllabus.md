@@ -7,7 +7,7 @@ layout:     main
 
 CS 5220, Fall 2015  
 Lecture time: TR 8:40-9:55  
-Lecture location: Phillips 203
+Lecture location: Phillips 101
 
 ### Staff and office hours
 

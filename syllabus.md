@@ -18,7 +18,7 @@ E-mail: <script type="text/javascript" language="javascript">
  function strrev(str) { return str.split("").reverse().join(""); }
  var name = 'lednib';
  var domain = 'cs.cornell.edu';
- document.write(strrev(name) + '@' + domain + "<br/>OH: W 1:30-2:30, Th 10-11, or by appointment.");
+ document.write(strrev(name) + '@' + domain + "<br/>OH: T 10-11, W 1:30-2:30, or by appointment.");
 </script>
 <noscript>lastname at cs.cornell.edu<br/>OH: W 1:30-2:30, Th 10-11, or by appointment.</noscript>
 

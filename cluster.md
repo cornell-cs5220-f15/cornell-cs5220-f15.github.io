@@ -93,7 +93,9 @@ Totient head node.  For timing runs, you will want to submit jobs to
 the batch queue system.  Batch jobs on the Totient cluster are managed by the
 [TORQUE](http://www.adaptivecomputing.com/products/open-source/torque/)
 resource manager.  To run a batch job, you will need to create a PBS
-script; for example, the following script runs the `hostname` command
+script; for example, the 
+[following script](https://github.com/cornell-cs5220-f15/demo/blob/master/hostname.pbs)
+runs the `hostname` command
 on a single machine, sending an email to my address if anything went
 wrong:
 

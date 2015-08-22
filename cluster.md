@@ -5,9 +5,12 @@ layout: main
 
 The primary computing platform will be an instructional cluster (the
 [Totient][totient] cluster) with fifteen [Xeon Phi 5110P][phi-spec]
-boards hosted in eight 12-core nodes consisting of
-[Intel Xeon E5-2620 v3][xeon-spec].  Unless otherwise stated, homework
-and projects should be tested and timed on these machines.
+boards hosted in eight 12-core compute nodes consisting of
+[Intel Xeon E5-2620 v3][xeon-spec] processors and 32 GB RAM per node.
+The head node is *not* as powerful as the compute nodes; please
+refrain from using it to run computationally intensive jobs.
+Unless otherwise stated, homework and projects should be tested and
+timed on these machines.
 
 Intel generously donated the Xeon Phi boards and funded the purchase
 of the host machines, which were provided with deep matching discounts

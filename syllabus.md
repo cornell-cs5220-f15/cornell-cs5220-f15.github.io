@@ -233,7 +233,7 @@ under an open source license.
 Any code or documentation you post for inclusion in the main class
 repository should be released under an appropriate open license; see
 the
-[contributing guidelines](ttps://github.com/cornell-cs5220-f15/cornell-cs5220-f15.github.io/blob/master/CONTRIBUTING.md).
+[contributing guidelines](https://github.com/cornell-cs5220-f15/cornell-cs5220-f15.github.io/blob/master/CONTRIBUTING.md).
 
 ### GitHub and privacy
 

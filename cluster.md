@@ -4,15 +4,18 @@ layout: main
 ---
 
 The primary computing platform will be an instructional cluster (the
-[Totient](https://en.wikipedia.org/wiki/Euler%27s_totient_function)
-cluster) with fifteen Xeon Phi 5110P boards hosted in eight
-12-core nodes consisting of Intel Xeon E5-2620 v3.  Unless otherwise
-stated, homework and projects should be tested and timed on these
-machines.
+[Totient][totient] cluster) with fifteen [Xeon Phi 5110P][phi-spec]
+boards hosted in eight 12-core nodes consisting of
+[Intel Xeon E5-2620 v3][xeon-spec].  Unless otherwise stated, homework
+and projects should be tested and timed on these machines.
 
 Intel generously donated the Xeon Phi boards and funded the purchase
 of the host machines, which were provided with deep matching discounts
 by Dell.
+
+[totient]: https://en.wikipedia.org/wiki/Euler%27s_totient_function
+[phi-spec]: http://ark.intel.com/products/71992/Intel-Xeon-Phi-Coprocessor-5110P-8GB-1_053-GHz-60-core
+[xeon-spec]: http://ark.intel.com/products/83352/Intel-Xeon-Processor-E5-2620-v3-15M-Cache-2_40-GHz
 
 ## Accounts and login
 

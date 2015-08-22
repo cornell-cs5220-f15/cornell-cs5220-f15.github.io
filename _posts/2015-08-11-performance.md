@@ -644,6 +644,7 @@ Paraphrasing only slightly, these are:
     second)?  Show how you computed this, and give URLs for where you
     got the parameters in your calculation.  (We will return to this
     question again after we cover some computer architecture.)
+5.  What is the theoretical peak flop rate for your own machine?
 
 ## Further reading
 

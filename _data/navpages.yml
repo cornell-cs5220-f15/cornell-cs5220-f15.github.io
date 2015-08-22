@@ -1,7 +1,5 @@
 - link: index
   name: Home
-- link: posts
-  name: Posts
 - link: syllabus
   name: Syllabus
 - link: schedule

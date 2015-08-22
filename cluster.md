@@ -54,7 +54,7 @@ is
  - If you are on Mac OS X, the native SSH client can use the system
    keychain directly.  To add your private key, simply use the command
 
-     ssh-add -K /path/of/private/key
+       ssh-add -K /path/of/private/key
 
  - If you are on a Linux variant, or if you are using Cygwin under
    Windows, I recommend using the

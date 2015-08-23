@@ -20,7 +20,7 @@
     <!--
       Original source:
         http://luugiathuy.com/slides/jekyll-create-slides-with-revealjs/
-      DSB: Added MathJax
+      DSB: Added MathJax and audio
       -->
     <!-- Description -->
     {% if page.description %}
@@ -66,7 +66,7 @@
   </head>
 
   <body>
-  
+
     <div class="reveal">
       <div class="slides">
         {{ content }}
@@ -95,6 +95,12 @@
         {% if page.autoslide %}
           autoSlide: {{page.autoslide}},
         {% endif %}
+        {% if page.audio %}
+          audioPrefix: '{{ page.audio }}',
+          audioSuffix: '.wav',
+          audioDefaultDuration: 5,
+          audioPlayerOpacity: 0.05,
+        {% endif %}
         // Optional reveal.js plugins
         dependencies: [
           { src: '{{ "reveal.js/lib/js/classList.js" | prepend: site.baseurl }}', condition: function() { return !document.body.classList; } },
@@ -103,12 +109,22 @@
           { src: '{{ "reveal.js/plugin/highlight/highlight.js" | prepend: site.baseurl }}', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: '{{ "reveal.js/plugin/zoom-js/zoom.js" | prepend: site.baseurl }}', async: true },
           { src: '{{ "reveal.js/plugin/notes/notes.js" | prepend: site.baseurl }}', async: true },
+          {% if page.audio %}
+          { src: '{{ "reveal.js/plugin/audio-slideshow/slideshow-recorder.js" | prepend: site.baseurl }}', condition: function( ) { return !!document.body.classList; } },
+          { src: '{{ "reveal.js/plugin/audio-slideshow/audio-slideshow.js" | prepend: site.baseurl }}', condition: function( ) { return !!document.body.classList; } },
+          {% endif %}
           // MathJax
-          { src: '{{ "reveal.js/plugin/math/math.js" | prepend: site.baseurl }}', async: true }      
-        ]
+          { src: '{{ "reveal.js/plugin/math/math.js" | prepend: site.baseurl }}', async: true }
+      ]
+      {% if page.audio %},
+      keyboard: { // r to start/stop recording, z to download zip
+        82: function() { Recorder.toggleRecording(); },
+        90: function() { Recorder.downloadZip(); }
+      }
+      {% endif %}
       });
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     {% if page.js %}{% for script in page.js %}
     <script src="{{ site.baseurl }}{{ script }}"></script>

@@ -7,6 +7,7 @@ The primary computing platform will be an instructional cluster (the
 [Totient][totient] cluster) with fifteen [Xeon Phi 5110P][phi-spec]
 boards hosted in eight 12-core compute nodes consisting of
 [Intel Xeon E5-2620 v3][xeon-spec] processors and 32 GB RAM per node.
+Node `totient-02` has one Phi board; the other compute nodes have two.
 The head node is *not* as powerful as the compute nodes; please
 refrain from using it to run computationally intensive jobs.
 Unless otherwise stated, homework and projects should be tested and

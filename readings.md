@@ -77,11 +77,13 @@ tutorials and references on Intel parallel technology, and these
 are worth a browse.
 
 - [Intel code modernization site][modern-code]
+- [Intel MIC developer site][mic-developer]
 - [Video lectures on parallel computing][intel-university]
 - [Parallel programming curriculum initiative][pp-initiative]
 - [Parallel programming curriculum content][pp-curricula]
 
 [modern-code]: https://software.intel.com/en-us/modern-code
+[mic-developer]: https://software.intel.com/en-us/mic-developer
 [pp-initiative]: https://www-ssl.intel.com/content/www/us/en/education/university/parallel-programming-initiative.html
 [pp-curricula]: http://www.intel.com/content/www/us/en/education/university/parallel-programming-initiative/curricula.html
 [intel-university]: http://university.intel.com/

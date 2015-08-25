@@ -217,7 +217,7 @@ $$
   S(p) \leq \frac{a + bP}{a + b} = p-\alpha(p-1)
 $$
 
-where $\alpha = a/b$ is the fraction of serial work.
+where $\alpha = a/(a+b)$ is the fraction of serial work.
 
 #### Takeaway
 

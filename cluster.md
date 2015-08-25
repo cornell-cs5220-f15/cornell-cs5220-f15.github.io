@@ -57,9 +57,13 @@ is
 
        ssh-add -K /path/of/private/key
 
- - If you are on a Linux variant, or if you are using Cygwin under
-   Windows, I recommend using the
-   [keychain](http://linux.die.net/man/1/keychain) program.
+ - If you are on a Linux variant, or if you are using Cygwin under Windows, I
+   recommend using the [keychain](http://linux.die.net/man/1/keychain)
+   program. If you are running GNOME, you likely have [GNOME
+   Keyring](https://en.wikipedia.org/wiki/GNOME_Keyring) already installed on
+   your system and do not need keychain. If are you running KDE, you likely have
+   [KWallet](https://en.wikipedia.org/wiki/KWallet), a similar program. If you
+   do not have these, you can still use keychain.
 
  - Under Windows, [PuTTY](www.putty.org) seems to be the most common
    SSH client (unless you are using the SSH client under Cygwin).

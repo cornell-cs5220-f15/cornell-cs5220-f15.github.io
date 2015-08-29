@@ -157,14 +157,14 @@ The basic module commands are:
 The `torque` module is loaded by default.  At present, the available
 modules are:
 
-- `torque/5.1.1.2`: Batch queue manager
-- `psxe/2015`: Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)
+- `torque/5.1.1.2`: [Torque batch queue manager][torque]
+- `psxe/2015`: [Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)][psxe]
 - `anaconda`: [Anaconda Scientific Python distribution][anaconda]
 - `python/2.7`: Generic Python build (version 2.7)
 - `python/3.4.3`: Generic Python build (version 3.4.3)
-- `openmpi`: OpenMPI 1.8.8
+- `openmpi`: [OpenMPI 1.8.8][openmpi]
 
-### Available modules
-
-At present, the only module other than `torque` is `openmpi`.
-This will change soon.
+[psxe]: https://software.intel.com/en-us/intel-parallel-studio-xe
+[torque]: http://www.adaptivecomputing.com/products/open-source/torque/
+[anaconda]: https://store.continuum.io/cshop/anaconda/
+[openmpi]: http://www.open-mpi.org/

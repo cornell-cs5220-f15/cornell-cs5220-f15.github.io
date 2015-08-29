@@ -121,7 +121,7 @@ wrong:
     
     #PBS -N hostname
     #PBS -j oe
-    #PBS -M bindel@cornell.edu
+    #PBS -M your_net_id@cornell.edu
     
     hostname
 

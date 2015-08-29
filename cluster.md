@@ -13,6 +13,11 @@ refrain from using it to run computationally intensive jobs.
 Unless otherwise stated, homework and projects should be tested and
 timed on these machines.
 
+The cluster runs [RedHat Enterprise Linux 6.7 (Santiago)](rhel67).
+The system base compilers are a bit old, but we plan to install the
+[Developer Toolset][devtools] with more recent versions of the
+compiler as well as some utilities.
+
 Intel generously donated the Xeon Phi boards and funded the purchase
 of the host machines, which were provided with deep matching discounts
 by Dell.
@@ -20,6 +25,8 @@ by Dell.
 [totient]: https://en.wikipedia.org/wiki/Euler%27s_totient_function
 [phi-spec]: http://ark.intel.com/products/71992/Intel-Xeon-Phi-Coprocessor-5110P-8GB-1_053-GHz-60-core
 [xeon-spec]: http://ark.intel.com/products/83352/Intel-Xeon-Processor-E5-2620-v3-15M-Cache-2_40-GHz
+[rhel67]: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/index.html
+[devtools]: https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/3/index.html
 
 ## Accounts and login
 
@@ -147,7 +154,15 @@ The basic module commands are:
 - `module load foo`: load module `foo`
 - `module unload foo`: unload module `foo`
 
-The `torque` module is loaded by default.
+The `torque` module is loaded by default.  At present, the available
+modules are:
+
+- `torque/5.1.1.2`: Batch queue manager
+- `psxe/2015`: Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)
+- `anaconda`: [Anaconda Scientific Python distribution][anaconda]
+- `python/2.7`: Generic Python build (version 2.7)
+- `python/3.4.3`: Generic Python build (version 3.4.3)
+- `openmpi`: OpenMPI 1.8.8
 
 ### Available modules
 

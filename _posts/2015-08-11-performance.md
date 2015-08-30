@@ -668,7 +668,7 @@ Paraphrasing only slightly, these are:
 9.   Richard Vuduc, Aparna Chandramowlishwaran, Jee Choi, Murat (Efe)
      Guney, and Aashay Shringarpure.  [On the Limits of GPU Acceleration][9].
 
-[1]: www.davidhbailey.com/dhbpapers/twelve-ways.pdf
+[1]: http://www.davidhbailey.com/dhbpapers/twelve-ways.pdf
 [1a]: http://www.davidhbailey.com/dhbpapers/mislead.pdf
 [2]: http://www.davidhbailey.com/dhbtalks/dhb-12ways.pdf
 [3]: http://blogs.fau.de/hager/archives/category/fooling-the-masses

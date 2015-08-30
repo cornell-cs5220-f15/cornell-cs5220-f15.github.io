@@ -159,7 +159,7 @@ The basic module commands are:
 At present, the available modules are:
 
 - `cs5220`: Load a standard set of modules for the class
-- `util`: Up-to-date `git`, `binutils`, and various other utilities
+- `utils`: Up-to-date `git`, `binutils`, and various other utilities
 - `psxe/2015`: [Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)][psxe]
 - `gcc/5.2.0`: [GCC 5.2.0][gcc5]
 - `anaconda`: [Anaconda Scientific Python distribution][anaconda]

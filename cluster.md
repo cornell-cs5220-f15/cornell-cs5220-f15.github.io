@@ -154,17 +154,27 @@ The basic module commands are:
 - `module load foo`: load module `foo`
 - `module unload foo`: unload module `foo`
 
-The `torque` module is loaded by default.  At present, the available
-modules are:
+### Available modules
 
-- `torque/5.1.1.2`: [Torque batch queue manager][torque]
+At present, the available modules are:
+
+- `cs5220`: Load a standard set of modules for the class
+- `util`: Up-to-date `git`, `binutils`, and various other utilities
 - `psxe/2015`: [Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)][psxe]
+- `gcc/5.2.0`: [GCC 5.2.0][gcc5]
 - `anaconda`: [Anaconda Scientific Python distribution][anaconda]
 - `python/2.7`: Generic Python build (version 2.7)
 - `python/3.4.3`: Generic Python build (version 3.4.3)
-- `openmpi`: [OpenMPI 1.8.8][openmpi]
+- `openmpi/1.8.8-gcc-4.4.7`: [OpenMPI 1.8.8][openmpi] (system GCC)
+- `openmpi/1.10.0-gcc-5.2.0`: [OpenMPI 1.10.0][openmpi] (GCC 5.2.0)
+- `torque/5.1.1.2`: [Torque batch queue manager][torque]
+- `openblas/gcc-5.2.0`: [OpenBLAS][openblas] (GCC 5.2.0)
+- `lapack/gcc-5.2.0`: [LAPACK][lapack] (GCC 5.2.0)
 
 [psxe]: https://software.intel.com/en-us/intel-parallel-studio-xe
-[torque]: http://www.adaptivecomputing.com/products/open-source/torque/
+[gcc5]: https://gcc.gnu.org/gcc-5/
 [anaconda]: https://store.continuum.io/cshop/anaconda/
 [openmpi]: http://www.open-mpi.org/
+[torque]: http://www.adaptivecomputing.com/products/open-source/torque/
+[openblas]: http://www.openblas.net/
+[lapack]: http://www.netlib.org/lapack/

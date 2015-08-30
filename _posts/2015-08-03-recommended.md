@@ -70,6 +70,7 @@ configuration to match your GitHub account.  For example, I would write
 
     git config --global user.name "dbindel"
     git config --global user.email "bindel@cs.cornell.edu"
+    git config --global push.default simple
 
 Note that there's no requirement that you set up GitHub to use your
 real name and email (nor indeed is there any strict requirement that

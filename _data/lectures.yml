@@ -20,9 +20,9 @@
   date: 2015-09-01
   info: <a href="slides/2015-09-01-arch.html">Computer architecture basics</a>
   hw:
-    - <a href="slides/2015-09-01-arch.html">Architecture big picture</a>
-    - <a href="slides/2015-09-01-parallel.html">Instruction-level parallelism</a>
-    - <a href="slides/2015-09-01-memory.html">Memory and cache basics</a>
+    - <a href="slides/2015-09-01-arch.html">Overview</a>
+    - <a href="slides/2015-09-01-parallel.html">Parallelism</a>
+    - <a href="slides/2015-09-01-memory.html">Caches</a>
 -
   date: 2015-09-03
   info: Computer architecture basics

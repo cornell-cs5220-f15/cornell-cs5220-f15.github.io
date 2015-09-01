@@ -214,7 +214,7 @@ of Amdahl's law is *Gustafson's law*; if $a$ is the amount of serial work and
 $b$ is the parallelizable work, then 
 
 $$
-  S(p) \leq \frac{a + bP}{a + b} = p-\alpha(p-1)
+  S(p) \leq \frac{a + bp}{a + b} = p-\alpha(p-1)
 $$
 
 where $\alpha = a/(a+b)$ is the fraction of serial work.

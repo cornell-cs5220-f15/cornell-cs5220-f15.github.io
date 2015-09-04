@@ -1,0 +1,158 @@
+---
+layout: slide
+title: CS 5220 architecture intro
+description: Matmul tiling
+theme: black
+transition: slide
+js: js/quiz.js
+---
+
+
+<section data-markdown>
+# CS 5220: Applications of Parallel Computers
+## Matmul and tiling
+## 01 Sep 2015
+</section>
+
+
+<section data-markdown>
+## A memory benchmark (membench)
+
+    for array A of length L from 4KB to 8MB by 2x
+      for stride s  from 4 bytes to L/2 by 2x
+        time the following loop
+        for i = 0 to L by s
+          load A[i]
+
+</section>
+
+
+<section data-markdown>
+## Membench in pictures
+
+TODO: Graphic
+
+- Size = 64 bytes (16 ints)
+- Strides of 4, 8, 16, 32 bytes
+</section>
+
+
+<section data-markdown>
+## Membench on totient CPU
+
+TODO: Graphic
+
+- Vertical: 64B line size, 4K page size
+- Horizontal: 32KB L1, 256KB L2, 15MB L3 (not shown)
+- Diagonal: 8-way cache associativity, 512 entry L2 TLB
+</section>
+
+
+<section data-markdown>
+## Membench on Phi core
+</section>
+
+
+<section data-markdown>
+## Note on storage
+
+![Storage pic](/img/matmul/storage-0.png)
+
+- Two standard layouts:
+  - Column major (Fortran): A(i,j) at `A+i+j*n`
+  - Row-major (C): A(ij) at `A+i*n+j`
+- I default to column major
+- Also note: C has poor language matrix support
+</section>
+
+
+<section data-markdown>
+## Matrix multiply
+
+How fast can naive matrix multiply run?
+
+    #define A(i,j) AA[i+j*n]
+    #define B(i,j) BB[i+j*n]
+    #define C(i,j) CC[i+j*n]
+
+    memset(C, 0, n*n*sizeof(double));
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            for (int k = 0; k < n; ++k)
+                C(i,j) += A(i,k) * B(k,j);
+</section>
+
+
+<section data-markdown>
+## One row in naive
+
+TODO: Graphic
+
+- Access $A$ and $C$ with stride $8n$ bytes
+- Access all $8n^2$ bytes of $B$ before first re-use
+- Poor arithmetic intensity
+</section>
+
+
+<section data-markdown>
+## Matrix multiply compared (GCC)
+
+TODO: Graphic
+</section>
+
+
+<section data-markdown>
+## Matrix multiply compared (ICC)
+
+TODO: Graphic
+</section>
+
+
+<section data-markdown>
+## Hmm...
+
+TODO: Graphic
+
+- Compiler makes some difference
+  - Naive Fortran is faster than naive C
+  - "unfair": `ifort` recognizes matrix multiply!
+- Local instruction mix sets "speed of light"
+- Access pattern determines how close we get to limit
+</section>
+
+
+<section data-markdown>
+## Engineering strategy
+
+TODO: Graphic
+
+- Start with small "kernel" multiply
+  - Maybe odd sizes, strange layouts -- just go fast!
+  - May play with AVX intrinsics, compiler flags, etc
+  - Deserves its own timing rig
+- Use blocking based on kernel to improve access pattern
+</section>
+
+
+<section data-markdown>
+## Simple model
+
+- Two types of memory (fast+slow)
+  - $m$ = words read from slow memory
+  - $t_m$ = slow memory op time
+  - $f$ = number of flops
+  - $t_f$ = time per flop
+  - $q = f/m$ = average flopw/slow access
+- Time:
+  $$ft_f + mt_m = ft_f \left( 1 + \frac{t_m/t_f}{q} \right)
+- Larger $q$ means better time
+</section>
+
+
+<section data-markdown>
+## How big can $q$ be?
+
+1.  Dot product: $n$ data, $2n$ flops
+2.  Matrix-vector multiply: $n^2$ data, $2n^2$ flops
+3.  Matrix-matrix multiply: $2n^2$ data, $2n^3$ flops
+</section>

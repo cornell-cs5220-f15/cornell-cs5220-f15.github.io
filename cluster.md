@@ -154,15 +154,13 @@ The basic module commands are:
 - `module load foo`: load module `foo`
 - `module unload foo`: unload module `foo`
 
-### Available modules
-
 To load a standard set of modules for the class, do
 
     module load cs5220
 
 This will load the `devtoolset`, `utils`, `psxe`, and `anaconda` packages.
 
-#### General system tools
+### General system tools
 
 The default tools on the system are rather old.  The `devtoolset` and
 `utils` packages are there to get newer versions of the most critical
@@ -174,7 +172,7 @@ tools (e.g. compiler support).
 
 [devtoolset]: https://www.softwarecollections.org/en/scls/rhscl/devtoolset-3/
 
-#### Python
+### Python
 
 The system Python installation is Python 2.6.  We have vanilla Python
 2.7 and 3.4.3 installs, but for anything serious, I recommend using
@@ -188,7 +186,7 @@ utilities).
 
 [anaconda]: https://store.continuum.io/cshop/anaconda/
 
-#### Compilers and such
+### Compilers and such
 
 In addition to the system GCC (4.4.7) and the `devtoolset-3` GCC
 (4.9.2), we have the Intel compilers and Clang/Clang++ available.
@@ -203,7 +201,7 @@ We also have GCC 5.2.0, though I didn't build that much for it.
 [llvm]: http://llvm.org/
 [ispc]: https://ispc.github.io/
 
-#### C++ tools
+### C++ tools
 
 Boost is a standard set of tools for C++.  Armadillo and Eigen are
 linear algebra libraries in C++; if you have no preference between
@@ -217,7 +215,7 @@ the two, I recommend Armadillo.
 [armadillo]: http://arma.sourceforge.net/
 [eigen]: http://eigen.tuxfamily.org/index.php?title=Main_Page
 
-#### Numerical libraries
+### Numerical libraries
 
 We're going to see BLAS and LAPACK early in the semester, and also
 FFTW and perhaps SuiteSparse.  We likely won't say anything in

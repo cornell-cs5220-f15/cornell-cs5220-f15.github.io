@@ -33,7 +33,9 @@
 -
   date: 2015-09-08
   info: Intro to parallel machines and models
--
+  hw:
+    - Read: <a href="http://www.eecs.berkeley.edu/~waterman/papers/roofline.pdf">Roofline paper</a>
+    - <a href="slides/2015-09-08-matmul.html">Matrix multiply</a>
   date: 2015-09-10
   info: Intro to parallel machines and models
 #

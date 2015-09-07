@@ -233,7 +233,7 @@ particular about GSL, but it's there if you want it.
 [gsl]: http://www.gnu.org/software/gsl/
 [suitesparse]: http://faculty.cse.tamu.edu/davis/suitesparse.html
 
-#### Storage
+### Storage
 
 HDF5 is one of the major standards for storing large volumes of
 scientific data.  NetCDF plays in the same space as HDF5, and
@@ -248,7 +248,7 @@ you want to read and write MATLAB files.
 [netcdf]: http://www.unidata.ucar.edu/software/netcdf/
 [matio]: http://sourceforge.net/projects/matio/
 
-#### Parallel support
+### Parallel support
 
 We have multiple OpenMPI implementations installed, as well as Intel
 MPI.  If you're going to use OpenMPI, I recommend one of the OpenMPI

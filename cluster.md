@@ -195,11 +195,13 @@ We also have GCC 5.2.0, though I didn't build that much for it.
 - `psxe/2015`: [Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)][psxe]
 - `llvm/3.7.0`: [LLVM 3.7][llvm] and [ISPC][ispc]
 - `gcc/5.2.0`: [GCC 5.2.0][gcc5]
+- `upc/2.20.2`: [Berkeley Unified Parallel C][upc]
 
 [psxe]: https://software.intel.com/en-us/intel-parallel-studio-xe
 [gcc5]: https://gcc.gnu.org/gcc-5/
 [llvm]: http://llvm.org/
 [ispc]: https://ispc.github.io/
+[upc]: http://upc.lbl.gov/
 
 ### C++ tools
 

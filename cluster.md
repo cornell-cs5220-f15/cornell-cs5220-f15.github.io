@@ -219,6 +219,10 @@ the two, I recommend Armadillo.
 
 #### Numerical libraries
 
+We're going to see BLAS and LAPACK early in the semester, and also
+FFTW and perhaps SuiteSparse.  We likely won't say anything in
+particular about GSL, but it's there if you want it.
+
 - `openblas`: [OpenBLAS][openblas]
 - `lapack`: [LAPACK][lapack]
 - `fftw`: [Fastest Fourier Transform in the West][fftw]
@@ -232,6 +236,11 @@ the two, I recommend Armadillo.
 [suitesparse]: http://faculty.cse.tamu.edu/davis/suitesparse.html
 
 #### Storage
+
+HDF5 is one of the major standards for storing large volumes of
+scientific data.  NetCDF plays in the same space as HDF5, and
+MatI/O is a set of convenience wrappers that's kind of nice if
+you want to read and write MATLAB files.
 
 - `hdf5`: [HDF5: Heirarchical Data Format library][hdf5]
 - `netcdf`: [NetCDF: Network Common Data Format library][netcdf]

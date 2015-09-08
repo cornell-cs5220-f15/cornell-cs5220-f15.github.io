@@ -154,27 +154,110 @@ The basic module commands are:
 - `module load foo`: load module `foo`
 - `module unload foo`: unload module `foo`
 
-### Available modules
+To load a standard set of modules for the class, do
 
-At present, the available modules are:
+    module load cs5220
+
+This will load the `devtoolset`, `utils`, `psxe`, and `anaconda` packages.
+
+### General system tools
+
+The default tools on the system are rather old.  The `devtoolset` and
+`utils` packages are there to get newer versions of the most critical
+tools (e.g. compiler support).
 
 - `cs5220`: Load a standard set of modules for the class
 - `utils`: Up-to-date `git`, `binutils`, and various other utilities
-- `psxe/2015`: [Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)][psxe]
-- `gcc/5.2.0`: [GCC 5.2.0][gcc5]
+- `devtoolset`: [RedHat devtoolset-3 developer utilities][devtoolset]
+
+[devtoolset]: https://www.softwarecollections.org/en/scls/rhscl/devtoolset-3/
+
+### Python
+
+The system Python installation is Python 2.6.  We have vanilla Python
+2.7 and 3.4.3 installs, but for anything serious, I recommend using
+the Anaconda Python distribution (which comes with Python 2.7 and
+Python 3.4 with a full NumPy/SciPy stack, Matplotlib, and many other
+utilities).
+
 - `anaconda`: [Anaconda Scientific Python distribution][anaconda]
 - `python/2.7`: Generic Python build (version 2.7)
 - `python/3.4.3`: Generic Python build (version 3.4.3)
-- `openmpi/1.8.8-gcc-4.4.7`: [OpenMPI 1.8.8][openmpi] (system GCC)
-- `openmpi/1.10.0-gcc-5.2.0`: [OpenMPI 1.10.0][openmpi] (GCC 5.2.0)
-- `torque/5.1.1.2`: [Torque batch queue manager][torque]
-- `openblas/gcc-5.2.0`: [OpenBLAS][openblas] (GCC 5.2.0)
-- `lapack/gcc-5.2.0`: [LAPACK][lapack] (GCC 5.2.0)
+
+[anaconda]: https://store.continuum.io/cshop/anaconda/
+
+### Compilers and such
+
+In addition to the system GCC (4.4.7) and the `devtoolset-3` GCC
+(4.9.2), we have the Intel compilers and Clang/Clang++ available.
+We also have GCC 5.2.0, though I didn't build that much for it.
+
+- `psxe/2015`: [Intel Parallel Studio XE 2015 (Intel compilers, VTune, etc)][psxe]
+- `llvm/3.7.0`: [LLVM 3.7][llvm] and [ISPC][ispc]
+- `gcc/5.2.0`: [GCC 5.2.0][gcc5]
+- `upc/2.20.2`: [Berkeley Unified Parallel C][upc]
 
 [psxe]: https://software.intel.com/en-us/intel-parallel-studio-xe
 [gcc5]: https://gcc.gnu.org/gcc-5/
-[anaconda]: https://store.continuum.io/cshop/anaconda/
-[openmpi]: http://www.open-mpi.org/
-[torque]: http://www.adaptivecomputing.com/products/open-source/torque/
+[llvm]: http://llvm.org/
+[ispc]: https://ispc.github.io/
+[upc]: http://upc.lbl.gov/
+
+### C++ tools
+
+Boost is a standard set of tools for C++.  Armadillo and Eigen are
+linear algebra libraries in C++; if you have no preference between
+the two, I recommend Armadillo.
+
+- `boost`: [Boost C++ library][boost]
+- `armadillo`: [Armadillo C++ numerical library][armadillo]
+- `eigen`: [Eigen][eigen]
+
+[boost]: http://www.boost.org/
+[armadillo]: http://arma.sourceforge.net/
+[eigen]: http://eigen.tuxfamily.org/index.php?title=Main_Page
+
+### Numerical libraries
+
+We're going to see BLAS and LAPACK early in the semester, and also
+FFTW and perhaps SuiteSparse.  We likely won't say anything in
+particular about GSL, but it's there if you want it.
+
+- `openblas`: [OpenBLAS][openblas]
+- `lapack`: [LAPACK][lapack]
+- `fftw`: [Fastest Fourier Transform in the West][fftw]
+- `suitesparse`: [SuiteSparse sparse linear solvers][suitesparse]
+- `gsl`: [GNU Scientific Library][gsl]
+
 [openblas]: http://www.openblas.net/
 [lapack]: http://www.netlib.org/lapack/
+[fftw]: http://www.fftw.org/
+[gsl]: http://www.gnu.org/software/gsl/
+[suitesparse]: http://faculty.cse.tamu.edu/davis/suitesparse.html
+
+### Storage
+
+HDF5 is one of the major standards for storing large volumes of
+scientific data.  NetCDF plays in the same space as HDF5, and
+MatI/O is a set of convenience wrappers that's kind of nice if
+you want to read and write MATLAB files.
+
+- `hdf5`: [HDF5: Heirarchical Data Format library][hdf5]
+- `netcdf`: [NetCDF: Network Common Data Format library][netcdf]
+- `matio`: [Matrix I/O library][matio]
+
+[hdf5]: https://www.hdfgroup.org/HDF5/
+[netcdf]: http://www.unidata.ucar.edu/software/netcdf/
+[matio]: http://sourceforge.net/projects/matio/
+
+### Parallel support
+
+We have multiple OpenMPI implementations installed, as well as Intel
+MPI.  If you're going to use OpenMPI, I recommend one of the OpenMPI
+1.10.0 builds.
+
+- `openmpi`: [OpenMPI][openmpi]
+- `torque`: [Torque batch queue manager][torque]
+
+[openmpi]: http://www.open-mpi.org/
+[torque]: http://www.adaptivecomputing.com/products/open-source/torque/

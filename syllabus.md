@@ -21,7 +21,7 @@ E-mail: <script type="text/javascript" language="javascript">
  document.write(strrev(name) + '@' + domain + "<br/>OH: T 10-11, W 1:30-2:30, or by appointment.");
 </script>
 <noscript>lastname at cs.cornell.edu<br/>OH: W 1:30-2:30, Th 10-11, or by appointment.</noscript>
-TA: Colin Ponce
+TA: Colin Ponce  
 E-mail: <script type="text/javascript" language="javascript">
  function strrev(str) { return str.split("").reverse().join(""); }
  var name = 'ecnopc';

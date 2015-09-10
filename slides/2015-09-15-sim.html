@@ -3,6 +3,7 @@ layout: slide
 title: CS 5220
 description: Parallelism and locality in simulation
 theme: simple
+audio: http://www.cs.cornell.edu/~bindel/audio/2015-09-15-sim/
 transition: slide
 js: js/quiz.js
 ---
@@ -31,14 +32,30 @@ js: js/quiz.js
 </section>
 
 
+<section data-markdown>
+### Common ideas / issues
+
+-   Load balancing
+    -   Imbalance from lack of parallelism, poor distribution
+    -   Can be static or dynamic
+-   Locality
+    -   Want big blocks with low surface-to-volume ratio
+    -   Minimizes communication / computation ratio
+    -   Can generalize ideas to graph setting
+-   Tensions and tradeoffs
+    -   Irregular spatial decompositions for load balance at the cost of
+        complexity, maybe extra communication
+</section>
+
+
 <section>
 <h3>Basic styles of simulation</h3>
 
 <ul>
-<li>Discrete event systems (continuous or discrete time)</li>
-<li>Particle systems</li>
-<li>Lumped parameter models (ODEs)</li>
-<li>Distributed parameter models (PDEs / integral equations)</li>
+<li><a href="/slides/2015-09-15-life.html">Discrete event systems (continuous or discrete time)</a></li>
+<li><a href="/slides/2015-09-15-particle.html">Particle systems</a></li>
+<li><a href="/slides/2015-09-17-lumped.html">Lumped parameter models (ODEs)</a></li>
+<li><a href="/slides/2015-09-17-pde.html">Distributed parameter models (PDEs / integral equations)</a></li>
 </ul>
 
 <p style="text-align:left;">
@@ -102,334 +119,14 @@ Sometimes more than one at a time!
 </section>
 
 
-<section data-markdown>
-### Discrete events
-
-Basic setup:
-
--   Finite set of variables, updated via transition function
--   *Synchronous* case: finite state machine
--   *Asynchronous* case: event-driven simulation
--   Synchronous example: Game of Life
-
-Nice starting point — no discretization concerns!
-</section>
-
-
 <section>
-<h3>Game of Life</h3>
-
-<img style="background-color: white;" width="60%" src="/img/life/life.svg"></img>
-
-<p style="text-align:left;">
-Game of Life (John Conway):
-</p>
-<ol>
-<li>Live cell dies with &lt; 2 live neighbors</li>
-<li>Live cell dies with &gt; 3 live neighbors</li>
-<li>Live cell lives with 2–3 live neighbors</li>
-<li>Dead cell becomes live with exactly 3 live neighbors</li>
-</ol>
-</section>
-
-
-<section>
-<h3>Game of Life</h3>
-
-<img style="background-color: white;" width="35%" src="/img/life/dd0.svg"></img>
-
-<p>Easy to parallelize by domain decomposition.</p>
+<h3>What next?</h3>
 
 <ul>
-<li>Update work involves volume of subdomains</li>
-<li>Communication per step on surface (cyan)</li>
+<li>T: <a href="/slides/2015-09-15-life.html">Discrete event systems</a></li>
+<li>T: <a href="/slides/2015-09-15-particle.html">Particle systems</a></li>
+<li>R: <a href="/slides/2015-09-17-lumped.html">Lumped parameter models</a></li>
+<li>R: <a href="/slides/2015-09-17-pde.html">Distributed parameter models</a></li>
 </ul>
-</section>
 
-
-<section data-markdown>
-### Game of Life: Pioneers and Settlers
-
-What if pattern is “dilute”?
-
--   Few or no live cells at surface at each step
--   Think of live cell at a surface as an “event”
--   Only communicate events!
-    -   This is *asynchronous*
-    -   Harder with message passing — when do you receive?
-</section>
-
-
-<section data-markdown>
-### Asynchronous Game of Life
-
-How do we manage events?
-
--   Could be *speculative* — assume no communication across
-    boundary for many steps, back up if needed
--   Or *conservative* — wait whenever communication
-    possible
-    -   possible $\not \equiv$ guaranteed!
-    -   Deadlock: everyone waits for everyone else to send
-    -   Can get around this with NULL messages
-
-How do we manage load balance?
-
--   No need to simulate quiescent parts of the game!
--   Maybe dynamically assign smaller blocks to processors?
-</section>
-
-
-<section data-markdown>
-### Particle simulation
-
-Particles move via Newton ($F = ma$), with
-
--   External forces: ambient gravity, currents, etc.
--   Local forces: collisions, Van der Waals ($1/r^6$), etc.
--   Far-field forces: gravity and electrostatics ($1/r^2$), etc.
-    -   Simple approximations often apply (Saint-Venant)
-</section>
-
-
-<section>
-<h3>A forced example</h3>
-
-<p style="text-align:left;">
-Example force:
-$$f_i = \sum_j Gm_i m_j
-      \frac{(x_j-x_i)}{r_{ij}^3}
-      \left(1 - \left(\frac{a}{r_{ij}}\right)^{4} \right), \qquad
-      r_{ij} = \|x_i-x_j\|$$
-</p>
-
-<ul>
-  <li>Long-range attractive force ($r^{-2}$)</li>
-  <li>Short-range repulsive force ($r^{-6}$)</li>
-  <li>Go from attraction to repulsion at radius $a$</li>
-</ul>
-</section>
-
-
-<section data-markdown>
-### A simple serial simulation
-
-In Matlab, we can write
-
-      npts = 100;
-      t = linspace(0, tfinal, npts);
-      [tout, xyv] = ode113(@fnbody, ...
-                    t, [x; v], [], m, g);
-      xout = xyv(:,1:length(x))';
-
-... but I can’t call ode113 in C in parallel (or can I?)
-</section>
-
-
-<section data-markdown>
-### A simple serial simulation
-
-Maybe a fixed step leapfrog will do?
-
-      npts = 100;
-      steps_per_pt = 10;
-      dt = tfinal/(steps_per_pt*(npts-1));
-      xout = zeros(2*n, npts);
-      xout(:,1) = x;
-      for i = 1:npts-1
-        for ii = 1:steps_per_pt
-          x = x + v*dt;
-          a = fnbody(x, m, g);
-          v = v + a*dt;
-        end
-        xout(:,i+1) = x;
-      end
-
-</section>
-
-
-<section data-markdown>
-### Pondering particles
-
--   Where do particles “live” (esp. in distributed memory)?
-    -   Decompose in space? By particle number?
-    -   What about clumping?
--   How are long-range force computations organized?
--   How are short-range force computations organized?
--   How is force computation load balanced?
--   What are the boundary conditions?
--   How are potential singularities handled?
--   What integrator is used? What step control?
-</section>
-
-
-<section data-markdown>
-### External forces
-
-Simplest case: no particle interactions.
-
--   Embarrassingly parallel (like Monte Carlo)!
--   Could just split particles evenly across processors
--   Is it that easy?
-    -   Maybe some trajectories need short time steps?
-    -   Even with MC, load balance may not be entirely trivial.
-</section>
-
-
-<section>
-<h3>Local forces</h3>
-
-<img width="30%" src="/img/particle/dd1.svg"></img><br/>
-
-<ul>
-<li>Simplest all-pairs check is $O(n^2)$ (expensive)</li>
-<li>Or only check close pairs (via binning, quadtrees?)</li>
-<li>Communication required for pairs checked</li>
-<li>Usual model: domain decomposition</li>
-</ul>
-</section>
-
-<section>
-<h3>Local forces: Communication</h3>
-
-<img width="30%" src="/img/particle/dd2.svg"></img><br/>
-
-<p style="text-align: left;">
-  Minimize communication:
-</p>
-<ul>
-<li>Send particles that might affect a neighbor <q>soon</q></li>
-<li>Trade extra computation against communication</li>
-<li>Want low surface area-to-volume ratios on domains</li>
-</section>
-
-<section>
-<h3>Local forces: Load balance</h3>
-
-<img width="30%" src="/img/particle/dd3.svg"></img><br/>
-
-<ul>
-  <li>Are particles evenly distributed?</li>
-  <li>Do particles remain evenly distributed?</li>
-  <li>Can divide space unevenly (e.g. quadtree/octtree)</li>
-</ul>
-</section>
-
-<section>
-<h3>Far-field forces</h3>
-
-<img width="60%" src="/img/particle/rr1.svg"></img><br/>
-
-<ul>
-<li>Every particle affects every other particle</li>
-<li>All-to-all communication required</li>
-  <ul>
-  <li>Overlap communication with computation</li>
-  <li>Poor memory scaling if everyone keeps everything!</li>
-  </ul>
-<li>Idea: pass particles in a round-robin manner</li>
-</ul>
-</section>
-
-<section>
-<h3>Passing particles for far-field forces</h3>
-
-<img width="60%" src="/img/particle/rr1.svg"></img><br/>
-<pre><code class="no-highlight" data-trim>
-copy local particles to current buf
-for phase = 1:p
-  send current buf to rank+1 (mod p)
-  recv next buf from rank-1 (mod p) 
-  interact local particles with current buf
-  swap current buf with next buf
-end
-</code></pre>
-</section>
-
-<section>
-<h3>Passing particles for far-field forces</h3>
-
-<p style="text-align:left;">
-Suppose $n = N/p$ particles in buffer. At each phase
-$$
-\begin{align}
-  t_{\mathrm{comm}} &\approx \alpha + \beta n \\
-  t_{\mathrm{comp}} &\approx \gamma n^2
-\end{align}
-$$
-So we can mask communication with computation if
-$$
-  n \geq \frac{1}{2\gamma} \left( \beta + \sqrt{\beta^2 + 4 \alpha \gamma}
-  \right) &gt; \frac{\beta}{\gamma}
-$$
-</p>
-
-<p style="text-align:left;">
-More efficient serial code<br/>
-$\implies$ larger $n$ needed to mask communication!<br/>
-$\implies$ worse speed-up as $p$ gets larger (fixed $N$)<br/>
-but scaled speed-up ($n$ fixed) remains unchanged.
-</p>
-
-</section>
-
-<section>
-<h3>Far-field forces: particle-mesh methods</h3>
-
-<img width="20%" src="/img/particle/pic1.svg"></img><br/>
-
-<p style="text-align: left;">
-Consider $r^{-2}$ electrostatic potential interaction
-</p>
-<ul>
-  <li>Enough charges looks like a continuum!</li>
-  <li>Poisson equation maps charge distribution to potential</li>
-  <li>Use fast Poisson solvers for regular grids (FFT, multigrid)</li>
-  <li>Approximation depends on mesh and particle density</li>
-  <li>Can clean up leading part of approximation error</li>
-</ul>
-</section>
-
-<section>
-<h3>Far-field forces: particle-mesh methods</h3>
-
-<img width="20%" src="/img/particle/pic1.svg"></img><br/>
-
-<ul>
-  <li>Map particles to mesh points (multiple strategies)</li>
-  <li>Solve potential PDE on mesh</li>
-  <li>Interpolate potential to particles</li>
-  <li>Add correction term – acts like local force</li>
-</ul>
-</section>
-
-<section>
-<h3>Far-field forces: tree methods</h3>
-
-<img width="60%" src="/img/particle/tree.svg"></img><br/>
-
-<ul>
-<li>Distance simplifies things
-  <ul><li>Andromeda looks like a point mass from here?</li></ul>
-</li>
-<li>Build a tree, approximating descendants at each node</li>
-<li>Several variants: Barnes-Hut, FMM, Anderson’s method</li>
-<li>More on this later in the semester</li>
-</ul>
-</section>
-
-<section data-markdown>
-### Summary of particle example
-
--   Model: Continuous motion of particles
-    -   Could be electrons, cars, whatever...
--   Step through discretized time
--   Local interactions
-    -   Relatively cheap
-    -   Load balance a pain
--   All-pairs interactions
-    -   Obvious algorithm is expensive ($O(n^2)$)
-    -   Particle-mesh and tree-based algorithms help
-
-An important special case of lumped/ODE models.
 </section>

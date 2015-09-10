@@ -47,12 +47,18 @@
 #
 -
   date: 2015-09-15
-  info: Parallelism and locality in simulations
+  info: <a href="slides/2015-09-15-sim.html">Parallelism and locality in simulations</a>
+  hw:
+  - <a href="slides/2015-09-15-sim.html">Parallelism and locality in simulations</a>
+  - <a href="slides/2015-09-15-life.html">Discrete events and Game of Life</a>
+  - <a href="slides/2015-09-15-particle.html">Particle systems</a>
 -
   date: 2015-09-17
-  info: Parallelism and locality in simulations
+  info: <a href="slides/2015-09-15-sim.html">Parallelism and locality in simulations</a>
   hw:
   - P1 initial report
+  - <a href="slides/2015-09-17-lumped.html">Lumped parameter systems</a>
+  - <a href="slides/2015-09-17-pde.html">Distributed parameter systems</a>
 #
 # ==================
 # Week 4

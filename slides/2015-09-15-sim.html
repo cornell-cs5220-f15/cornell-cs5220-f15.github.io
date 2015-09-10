@@ -2,7 +2,7 @@
 layout: slide
 title: CS 5220
 description: Parallelism and locality in simulation
-theme: black
+theme: simple
 transition: slide
 js: js/quiz.js
 ---
@@ -48,48 +48,57 @@ Sometimes more than one at a time!
 </section>
 
 
-<section data-markdown>
-### Basic styles of simulation
-####  Discrete event systems
+<section>
+<h3>Basic styles of simulation</h3>
+<h4>Discrete event systems</h4>
 
-TODO: Graphic
+<img width="40%" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif"></img><br/>
 
-- Continuous or discrete time
-- Game of life, logic-level circuit simulation
-- Network simulation
+<ul>
+  <li>Continuous or discrete time</li>
+  <li>Game of life, logic-level circuit simulation</li>
+  <li>Network simulation</li>
+</ul>
+
 </section>
 
 
-<section data-markdown>
-### Basic styles of simulation
-#### Particle systems
+<section>
+<h3>Basic styles of simulation</h3>
+<h4>Particle systems</h4>
 
-TODO: Graphic
+<img width="40%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Milky_Way_IR_Spitzer.jpg/800px-Milky_Way_IR_Spitzer.jpg"></img><br/>
 
--   Billiards, electrons, galaxies, ...
--   Ants, cars, ...?
+<ul>
+  <li>Billiards, electrons, galaxies, ...</li>
+  <li>Ants, cars, ...?</li>
+</ul>
 </section>
 
 
-<section data-markdown>
-### Basic styles of simulation
-#### Lumped parameter models
+<section>
+<h3>Basic styles of simulation</h3>
+<h4>Lumped parameter models</h4>
 
-TODO: Graphic
+<img width="40%" src="https://upload.wikimedia.org/wikipedia/commons/7/7d/RLC_low-pass.svg"></img><br/>
 
-- Systems of Ordinary Differential Equations (ODEs)
-- Circuits (SPICE), structures, chemical kinetics
+<ul>
+  <li>Systems of Ordinary Differential Equations (ODEs)</li>
+  <li>Circuits (SPICE), structures, chemical kinetics</li>
+</ul>
 </section>
 
 
-<section data-markdown>
-### Basic styles of simulation
-#### Distributed parameter models
+<section>
+<h3>Basic styles of simulation</h3>
+<h4>Distributed parameter models</h4>
 
-TODO: Graphic
+<img style="background-color: white;" src="/img/checkers2.svg"></img><br/>
 
-- PDEs / integral equations
-- Heat, elasticity, electrostatics, ...
+<ul>
+<li>PDEs / integral equations</li>
+<li>Heat, elasticity, electrostatics, ...</li>
+</ul>
 </section>
 
 
@@ -105,6 +114,7 @@ Basic setup:
 
 Nice starting point — no discretization concerns!
 </section>
+
 
 <section>
 <h3>Game of Life</h3>
@@ -122,16 +132,20 @@ Game of Life (John Conway):
 </ol>
 </section>
 
-<section data-markdown>
-### Game of Life
 
-TODO: Graphic
+<section>
+<h3>Game of Life</h3>
 
-Easy to parallelize by *domain decomposition*.
+<img style="background-color: white;" width="35%" src="/img/life/dd0.svg"></img>
 
--   Update work involves *volume* of subdomains
--   Communication per step on *surface* (cyan)
+<p>Easy to parallelize by domain decomposition.</p>
+
+<ul>
+<li>Update work involves volume of subdomains</li>
+<li>Communication per step on surface (cyan)</li>
+</ul>
 </section>
+
 
 <section data-markdown>
 ### Game of Life: Pioneers and Settlers
@@ -144,6 +158,7 @@ What if pattern is “dilute”?
     -   This is *asynchronous*
     -   Harder with message passing — when do you receive?
 </section>
+
 
 <section data-markdown>
 ### Asynchronous Game of Life
@@ -164,6 +179,7 @@ How do we manage load balance?
 -   Maybe dynamically assign smaller blocks to processors?
 </section>
 
+
 <section data-markdown>
 ### Particle simulation
 
@@ -174,6 +190,7 @@ Particles move via Newton ($F = ma$), with
 -   Far-field forces: gravity and electrostatics ($1/r^2$), etc.
     -   Simple approximations often apply (Saint-Venant)
 </section>
+
 
 <section>
 <h3>A forced example</h3>
@@ -193,6 +210,7 @@ $$f_i = \sum_j Gm_i m_j
 </ul>
 </section>
 
+
 <section data-markdown>
 ### A simple serial simulation
 
@@ -206,6 +224,7 @@ In Matlab, we can write
 
 ... but I can’t call ode113 in C in parallel (or can I?)
 </section>
+
 
 <section data-markdown>
 ### A simple serial simulation
@@ -228,10 +247,6 @@ Maybe a fixed step leapfrog will do?
 
 </section>
 
-<section data-markdown>
-### Plotting particles
-
-</section>
 
 <section data-markdown>
 ### Pondering particles
@@ -247,6 +262,7 @@ Maybe a fixed step leapfrog will do?
 -   What integrator is used? What step control?
 </section>
 
+
 <section data-markdown>
 ### External forces
 
@@ -259,64 +275,75 @@ Simplest case: no particle interactions.
     -   Even with MC, load balance may not be entirely trivial.
 </section>
 
-<section data-markdown>
-### Local forces
 
-TODO: Graphic
+<section>
+<h3>Local forces</h3>
 
--   Simplest all-pairs check is $O(n^2)$ (expensive)
--   Or only check close pairs (via binning, quadtrees?)
--   Communication required for pairs checked
--   Usual model: domain decomposition
+<img width="30%" src="/img/particle/dd1.svg"></img><br/>
+
+<ul>
+<li>Simplest all-pairs check is $O(n^2)$ (expensive)</li>
+<li>Or only check close pairs (via binning, quadtrees?)</li>
+<li>Communication required for pairs checked</li>
+<li>Usual model: domain decomposition</li>
+</ul>
 </section>
 
-<section data-markdown>
-### Local forces: Communication
+<section>
+<h3>Local forces: Communication</h3>
 
-TODO: Graphic
+<img width="30%" src="/img/particle/dd2.svg"></img><br/>
 
-Minimize communication:
-
--   Send particles that might affect a neighbor “soon”
--   Trade extra computation against communication
--   Want low surface area-to-volume ratios on domains
+<p style="text-align: left;">
+  Minimize communication:
+</p>
+<ul>
+<li>Send particles that might affect a neighbor <q>soon</q></li>
+<li>Trade extra computation against communication</li>
+<li>Want low surface area-to-volume ratios on domains</li>
 </section>
 
-<section data-markdown>
-### Local forces: Load balance
+<section>
+<h3>Local forces: Load balance</h3>
 
-TODO: Graphic
+<img width="30%" src="/img/particle/dd3.svg"></img><br/>
 
--   Are particles evenly distributed?
--   Do particles remain evenly distributed?
--   Can divide space unevenly (e.g. quadtree/octtree)
+<ul>
+  <li>Are particles evenly distributed?</li>
+  <li>Do particles remain evenly distributed?</li>
+  <li>Can divide space unevenly (e.g. quadtree/octtree)</li>
+</ul>
 </section>
 
-<section data-markdown>
-### Far-field forces
+<section>
+<h3>Far-field forces</h3>
 
-TODO: Graphic
+<img width="60%" src="/img/particle/rr1.svg"></img><br/>
 
--   Every particle affects every other particle
--   All-to-all communication required
-    -   Overlap communication with computation
-    -   Poor memory scaling if everyone keeps everything!
--   Idea: pass particles in a round-robin manner
+<ul>
+<li>Every particle affects every other particle</li>
+<li>All-to-all communication required</li>
+  <ul>
+  <li>Overlap communication with computation</li>
+  <li>Poor memory scaling if everyone keeps everything!</li>
+  </ul>
+<li>Idea: pass particles in a round-robin manner</li>
+</ul>
 </section>
 
-<section data-markdown>
-### Passing particles for far-field forces
+<section>
+<h3>Passing particles for far-field forces</h3>
 
-TODO: Graphic
-
-    copy local particles to current buf
-    for phase = 1:p
-      send current buf to rank+1 (mod p)
-      recv next buf from rank-1 (mod p) 
-      interact local particles with current buf
-      swap current buf with next buf
-    end
-
+<img width="60%" src="/img/particle/rr1.svg"></img><br/>
+<pre><code class="no-highlight" data-trim>
+copy local particles to current buf
+for phase = 1:p
+  send current buf to rank+1 (mod p)
+  recv next buf from rank-1 (mod p) 
+  interact local particles with current buf
+  swap current buf with next buf
+end
+</code></pre>
 </section>
 
 <section>
@@ -333,7 +360,7 @@ $$
 So we can mask communication with computation if
 $$
   n \geq \frac{1}{2\gamma} \left( \beta + \sqrt{\beta^2 + 4 \alpha \gamma}
-\right) > \frac{\beta}{\gamma}
+  \right) &gt; \frac{\beta}{\gamma}
 $$
 </p>
 
@@ -344,48 +371,51 @@ $\implies$ worse speed-up as $p$ gets larger (fixed $N$)<br/>
 but scaled speed-up ($n$ fixed) remains unchanged.
 </p>
 
-<p>
-  This analysis neglects overhead term in LogP.
-</p>
 </section>
 
-<section data-markdown>
-### Far-field forces: particle-mesh methods
+<section>
+<h3>Far-field forces: particle-mesh methods</h3>
 
-TODO: Graphic
+<img width="20%" src="/img/particle/pic1.svg"></img><br/>
 
+<p style="text-align: left;">
 Consider $r^{-2}$ electrostatic potential interaction
-
--   Enough charges looks like a continuum!
--   Poisson equation maps charge distribution to potential
--   Use fast Poisson solvers for regular grids (FFT, multigrid)
--   Approximation depends on mesh and particle density
--   Can clean up leading part of approximation error
+</p>
+<ul>
+  <li>Enough charges looks like a continuum!</li>
+  <li>Poisson equation maps charge distribution to potential</li>
+  <li>Use fast Poisson solvers for regular grids (FFT, multigrid)</li>
+  <li>Approximation depends on mesh and particle density</li>
+  <li>Can clean up leading part of approximation error</li>
+</ul>
 </section>
 
-<section data-markdown>
-### Far-field forces: particle-mesh methods
+<section>
+<h3>Far-field forces: particle-mesh methods</h3>
 
-TODO: Graphic
+<img width="20%" src="/img/particle/pic1.svg"></img><br/>
 
--   Map particles to mesh points (multiple strategies)
--   Solve potential PDE on mesh
--   Interpolate potential to particles
--   Add correction term – acts like local force
-
+<ul>
+  <li>Map particles to mesh points (multiple strategies)</li>
+  <li>Solve potential PDE on mesh</li>
+  <li>Interpolate potential to particles</li>
+  <li>Add correction term – acts like local force</li>
+</ul>
 </section>
 
-<section data-markdown>
-### Far-field forces: tree methods
+<section>
+<h3>Far-field forces: tree methods</h3>
 
-TODO: Graphic
+<img width="60%" src="/img/particle/tree.svg"></img><br/>
 
--   Distance simplifies things
-    -   Andromeda looks like a point mass from here?
--   Build a tree, approximating descendants at each node
--   Several variants: Barnes-Hut, FMM, Anderson’s method
--   More on this later in the semester
-
+<ul>
+<li>Distance simplifies things
+  <ul><li>Andromeda looks like a point mass from here?</li></ul>
+</li>
+<li>Build a tree, approximating descendants at each node</li>
+<li>Several variants: Barnes-Hut, FMM, Anderson’s method</li>
+<li>More on this later in the semester</li>
+</ul>
 </section>
 
 <section data-markdown>

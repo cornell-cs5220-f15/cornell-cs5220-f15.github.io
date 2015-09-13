@@ -36,21 +36,29 @@
   hw:
     - <a href="http://www.eecs.berkeley.edu/~waterman/papers/roofline.pdf">Roofline paper</a>
     - <a href="slides/2015-09-08-matmul.html">Matrix multiply</a>
+-
   date: 2015-09-10
   info: Intro to parallel machines and models
   hw:
-    - <a href="http://www.cs.cornell.edu/~bindel/class/cs5220-s14/lectures/lec05.pdf">Intro to parallel machines (S14 version)</a>
-    - Watch for F15 updates!
+    - <a href="slides/2015-09-10-parallel.html">Parallel machines and models</a>
 #
 # ==================
 # Week 3
 #
 -
   date: 2015-09-15
-  info: Parallelism and locality in simulations
+  info: <a href="slides/2015-09-15-sim.html">Parallelism and locality in simulations</a>
+  hw:
+  - <a href="slides/2015-09-15-sim.html">Parallelism and locality in simulations</a>
+  - <a href="slides/2015-09-15-life.html">Discrete events and Game of Life</a>
+  - <a href="slides/2015-09-15-particle.html">Particle systems</a>
 -
   date: 2015-09-17
-  info: Parallelism and locality in simulations
+  info: <a href="slides/2015-09-15-sim.html">Parallelism and locality in simulations</a>
+  hw:
+  - P1 initial report
+  - <a href="slides/2015-09-17-lumped.html">Lumped parameter systems</a>
+  - <a href="slides/2015-09-17-pde.html">Distributed parameter systems</a>
 #
 # ==================
 # Week 4
@@ -58,6 +66,8 @@
 -
   date: 2015-09-22
   info: Distributed memory and MPI
+  hw:
+  - P1 reviews
 -
   date: 2015-09-24
   info: Distributed memory and MPI
@@ -68,6 +78,8 @@
 -
   date: 2015-09-29
   info: Shared memory programming
+  hw:
+  - P1 final
 -
   date: 2015-10-01
   info: Shared memory programming

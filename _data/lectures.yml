@@ -77,6 +77,7 @@
   hw:
   - <a href="/slides/2015-09-24-openmp.html">OpenMP</a>
   - <a href="/slides/2015-09-24-memory.html">HW concerns</a>
+  - <a href="http://wwwi10.lrr.in.tum.de/~gerndt/home/Teaching/EfficientHPCProgramming/CommonMistakesInOpenMPAndHowToAvoidThem.pdf">OpenMP pitfalls</a>
 #
 # ==================
 # Week 5

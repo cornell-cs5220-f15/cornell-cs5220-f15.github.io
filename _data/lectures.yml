@@ -65,24 +65,30 @@
 #
 -
   date: 2015-09-22
-  info: Distributed memory and MPI
+  info: Shared memory programming
   hw:
   - P1 reviews
+  - <a href="/slides/2015-09-22-shared.html">Basics</a>
+  - <a href="/slides/2015-09-22-mc.html">MC example</a>
+  - <a href="/slides/2015-09-22-pthreads.html">Pthreads</a>
 -
   date: 2015-09-24
-  info: Distributed memory and MPI
+  info: Shared memory programming
+  hw:
+  - <a href="/slides/2015-09-24-openmp.html">OpenMP</a>
+  - <a href="/slides/2015-09-24-memory.html">HW concerns</a>
 #
 # ==================
 # Week 5
 #
 -
   date: 2015-09-29
-  info: Shared memory programming
+  info: Distributed memory and MPI
   hw:
   - P1 final
 -
   date: 2015-10-01
-  info: Shared memory programming
+  info: Distributed memory and MPI
 #
 # ==================
 # Week 6

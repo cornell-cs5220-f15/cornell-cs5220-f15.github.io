@@ -83,7 +83,7 @@ Serial version:
       x  = rand(10,2);
       fX = min distance between points in x;
       sum_fX  = sum_fX + fX;
-      sum_fX2 = sum_fX + fX*fX;
+      sum_fX2 = sum_fX2 + fX*fX;
       result = sum_fX/i;
       errbar = sqrt(sum_fX2-sum_fX*sum_fX/i)/i;
       if (abs(errbar/result) < reltol), break; end

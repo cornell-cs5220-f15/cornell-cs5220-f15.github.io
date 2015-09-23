@@ -220,7 +220,7 @@ end
 ### Implicit time stepping
 
 -   Backward Euler uses backward difference for $d/dt$
-    $$u(t+\delta) \approx u(t) + u'(t + \delta t) \delta$$
+    $$u(t+\delta t) \approx u(t) + u'(t + \delta t) \delta$$
 -   Taking a time step $\equiv$ sparse matvec with
     $\left( I + C \frac{\delta}{h^2} T \right)^{-1}$
 -   No time step restriction for stability (good!)

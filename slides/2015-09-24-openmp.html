@@ -69,14 +69,14 @@ A practical aside...
 <li>I use GCC from Homebrew for OpenMP on OS X</li>
 <li>GCC: Need <tt>-fopenmp</tt> for both compile and link lines
 <pre><code class="nohighlight" data-trim>
-gcc -c -fopenmp foo.c
-gcc -o -fopenmp mycode.x foo.o
+gcc -fopenmp -c foo.c
+gcc -fopenmp -o mycode.x foo.o
 </code></pre>
 </li>
 <li>Intel: Need <tt>-openmp</tt> for both compile and link lines
 <pre><code class="nohighlight" data-trim>
-icc -c -openmp foo.c
-icc -o -openmp mycode.x foo.o
+icc -openmp -c foo.c
+icc -openmp -o mycode.x foo.o
 </code></pre>
 </li>
 </ul>

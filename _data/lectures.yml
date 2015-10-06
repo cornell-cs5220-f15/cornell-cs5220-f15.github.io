@@ -84,22 +84,26 @@
 #
 -
   date: 2015-09-29
-  info: Distributed memory and MPI
+  info: Wave equations and offload
   hw:
   - P1 final
 -
   date: 2015-10-01
-  info: Distributed memory and MPI
+  info: Tools for profiling and correctness
 #
 # ==================
 # Week 6
 #
 -
   date: 2015-10-06
-  info: Tools for profiling and correctness
+  info: <a href="slides/2015-10-06-network.html">Network basics</a> and <a href="slides/2015-10-06-mpi.html">MPI intro</a>
+  hw:
+  - Skim <a href="https://computing.llnl.gov/tutorials/mpi/">LLNL MPI tutorial</a>
 -
   date: 2015-10-08
-  info: Impact of floating point
+  info: <a href="slides/2015-10-08-model.html">Message costs</a> and <a href="slides/2015-10-08-mpi.html">MPI take 2</a>
+  hw:
+  - <a href="http://www.eecs.berkeley.edu/Pubs/TechRpts/1992/CSD-92-713.pdf">LogP paper</a>
 #
 # ==================
 # Week 7
@@ -109,7 +113,9 @@
   break: Fall break
 -
   date: 2015-10-15
-  info: High-level languages and HPC
+  info: Impact of floating point
+#
+# High-level languages and HPC  
 #
 # ==================
 # Week 8

@@ -9,3 +9,4 @@ layout: main
 - [HW 2 (Programming Assignment): Shallow Wave Equation](https://github.com/cornell-cs5220-f15/water)
 - [Final project proposals](https://github.com/cornell-cs5220-f15/proposals)
 - [HW 3 (Programming Assignment): All-Pairs Shortest Path](https://github.com/cornell-cs5220-f15/path)
+- [Final project groups](https://github.com/cornell-cs5220-f15/proposals)

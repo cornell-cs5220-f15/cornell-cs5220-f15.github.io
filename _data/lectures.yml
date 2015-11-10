@@ -122,10 +122,10 @@
 #
 -
   date: 2015-10-20
-  info: Dense linear algebra I
+  info: <a href="slides/2015-10-20-dense1.pdf">Dense linear algebra I</a>
 -
   date: 2015-10-22
-  info: Dense linear algebra II
+  info: <a href="slides/2015-10-22-dense2.pdf">Dense linear algebra II</a>
 #
 # ==================
 # Week 9
@@ -142,10 +142,10 @@
 #
 -
   date: 2015-11-03
-  info: Sparse linear algebra I
+  info: <a href="slides/2015-11-03-sparse1.pdf">Sparse linear algebra I</a>
 -
   date: 2015-11-05
-  info: Sparse linear algebra II
+  info: <a href="slides/2015-11-05-sparse2.pdf">Sparse linear algebra II</a>
 #
 # ==================
 # Week 11

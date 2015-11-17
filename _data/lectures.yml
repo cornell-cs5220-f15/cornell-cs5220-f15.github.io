@@ -162,17 +162,17 @@
 #
 -
   date: 2015-11-17
-  info: Graph partitioning
+  info: <a href="slides/2015-11-17-languages.pdf">Beyond C/C++ with Cilk+ and UPC</a>
 -
   date: 2015-11-19
-  info: GPGPU, CUDA, OpenCL, and OpenACC
+  info: TBA
 #
 # ==================
 # Week 13
 #
 -
   date: 2015-11-24
-  info: Selected project presentations
+  info: TBA
 -
   date: 2015-11-26
   break: Thanksgiving

@@ -165,14 +165,14 @@
   info: <a href="slides/2015-11-17-languages.pdf">Beyond C/C++ with Cilk+ and UPC</a>
 -
   date: 2015-11-19
-  info: TBA
+  info: A few parallel examples
 #
 # ==================
 # Week 13
 #
 -
   date: 2015-11-24
-  info: TBA
+  info: <a href="slides/2015-11-23-thoughts.pdf">Concluding thoughts</a>
 -
   date: 2015-11-26
   break: Thanksgiving

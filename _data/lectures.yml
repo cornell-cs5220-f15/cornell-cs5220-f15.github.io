@@ -182,7 +182,7 @@
 #
 -
   date: 2015-12-01
-  info: Extra Lecture: Intro to CUDA
+  info: <a href="slides/2015-12-01-CUDA.pdf">Intro to CUDA (extra lecture by Eric Lee)</a>
 -
   date: 2015-12-03
   info: Bindel at Dagstuhl

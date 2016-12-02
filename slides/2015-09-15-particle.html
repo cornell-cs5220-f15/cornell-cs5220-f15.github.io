@@ -56,7 +56,7 @@ In Matlab, we can write
       t = linspace(0, tfinal, npts);
       [tout, xyv] = ode113(@fnbody, ...
                     t, [x; v], [], m, g);
-      xout = xyv(:,1:length(x))';
+      xout = xyv(:,1:length(x));
 
 ... but I can’t call ode113 in C in parallel (or can I?)
 </section>
